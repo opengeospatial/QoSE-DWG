@@ -247,7 +247,7 @@
 
             <qos-wfs:QualityOfServiceMetadata>
                 <qos:OperatingInfo>
-                    <qos:OperationalStatus xlink:href="http://def.opengeospatial.org/codelist/qos/status/1.0/operationalStatus.rdf#PreOperational" xlink:title="Operational" />
+                    <qos:OperationalStatus xlink:href="http://def.opengeospatial.org/codelist/qos/status/1.0/operationalStatus.rdf#PreOperational" xlink:title="Pre-Operational" />
                     <qos:ByDaysOfWeek>
                         <qos:On>Monday Tuesday Wednesday Thursday Friday</qos:On>
                         <qos:StartTime>06:00:00+01:00</qos:StartTime>
