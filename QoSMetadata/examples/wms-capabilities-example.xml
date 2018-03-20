@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WMS_Capabilities version="1.3.0"
+	xmlns="http://www.opengis.net/wms"
+	xmlns:qos="http://www.opengis.net/qos/1.0"
+	xmlns:qos-wms="http://www.opengis.net/qos/wms/1.0"
+	xmlns:inspire_common="http://inspire.ec.europa.eu/schemas/common/1.0"
+	xmlns:inspire_vs="http://inspire.ec.europa.eu/schemas/inspire_vs/1.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:ows="http://www.opengis.net/ows/2.0"
+	xsi:schemaLocation="http://www.opengis.net/wms http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd
+	http://inspire.ec.europa.eu/schemas/inspire_vs/1.0 http://inspire.ec.europa.eu/schemas/inspire_vs/1.0/inspire_vs.xsd
+	http://www.opengis.net/qos/wms/1.0 ../ows-qos-capabilities_wms.xsd">
+	<Service>
+		<Name>WMS</Name>
+		<Title>INSPIRE_SYKE_AlueidenHallintaJaRajoitukset1</Title>
+		<Abstract>WMS-palvelu sisältää INSPIRE-direktiivin Liite III/Alueiden hallinnan, rajoitusten ja sääntelyn piiriin kuuluvat alueet ja raportointiyksiköt -ryhmään kuuluvat seuraavat SYKEn aineistot: Vesipuitedirektiivin mukaiset vesimuodostumat, Vesienhoitoalueet. Aineistot eivät ole INSPIREn tietotuotemäärittelyn mukaisia.</Abstract>
+		<KeywordList>
+			<Keyword vocabulary="ISO">infoMapAccessService</Keyword>
+			<Keyword vocabulary="GEMET">Pintavesi</Keyword>
+			<Keyword>INSPIRE</Keyword>
+			<Keyword vocabulary="GEMET">Aluehallinnan, rajoitusten ja sääntelyn piiriin kuuluvat alueet ja raportointiyksiköt</Keyword>
+		</KeywordList>
+		<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?"/>
+		<ContactInformation>
+			<ContactPersonPrimary>
+				<ContactPerson/>
+				<ContactOrganization>Suomen ympäristökeskus</ContactOrganization>
+			</ContactPersonPrimary>
+			<ContactPosition/>
+			<ContactAddress>
+				<AddressType>Postiosoite</AddressType>
+				<Address>PL 140</Address>
+				<City>Helsinki</City>
+				<StateOrProvince/>
+				<PostCode>00251</PostCode>
+				<Country>Suomi</Country>
+			</ContactAddress>
+			<ContactVoiceTelephone>+358 20610123</ContactVoiceTelephone>
+			<ContactFacsimileTelephone/>
+			<ContactElectronicMailAddress>gistuki.syke@ymparisto.fi</ContactElectronicMailAddress>
+		</ContactInformation>
+		<Fees>Maksuton</Fees>
+		<AccessConstraints>Lisenssi</AccessConstraints>
+		<MaxWidth>2048</MaxWidth>
+		<MaxHeight>2048</MaxHeight>
+	</Service>
+	<Capability>
+		<Request>
+			<GetCapabilities>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?"/>
+
+						</Get>
+					</HTTP>
+
+				</DCPType>
+			</GetCapabilities>
+			<GetMap>
+				<Format>image/bmp</Format>
+				<Format>image/jpeg</Format>
+				<Format>image/tiff</Format>
+				<Format>image/png</Format>
+				<Format>image/png8</Format>
+				<Format>image/png24</Format>
+				<Format>image/png32</Format>
+				<Format>image/gif</Format>
+				<Format>image/svg+xml</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetMap>
+			<GetFeatureInfo>
+				<Format>application/vnd.esri.wms_raw_xml</Format>
+				<Format>application/vnd.esri.wms_featureinfo_xml</Format>
+				<Format>application/vnd.ogc.wms_xml</Format>
+				<Format>text/xml</Format>
+				<Format>text/html</Format>
+				<Format>text/plain</Format>
+				<DCPType>
+					<HTTP>
+						<Get>
+							<OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?"/>
+						</Get>
+					</HTTP>
+				</DCPType>
+			</GetFeatureInfo>
+		</Request>
+		<Exception>
+			<Format>application/vnd.ogc.se_xml</Format>
+			<Format>application/vnd.ogc.se_inimage</Format>
+			<Format>application/vnd.ogc.se_blank</Format>
+			<Format>text/xml</Format>
+			<Format>XML</Format>
+		</Exception>
+
+		<inspire_vs:ExtendedCapabilities>
+			<inspire_common:MetadataUrl xsi:type="inspire_common:resourceLocatorType">
+				<inspire_common:URL>http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/csw?Service=CSW&amp;Request=GetRecordById&amp;Version=2.0.2&amp;id=6f992abd-1605-43c8-9228-b9dd0b92d26b&amp;outputSchema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd&amp;elementSetName=full
+		</inspire_common:URL>
+				<inspire_common:MediaType>application/vnd.ogc.csw.GetRecordByIdResponse_xml</inspire_common:MediaType>
+			</inspire_common:MetadataUrl>
+			<inspire_common:SupportedLanguages xsi:type="inspire_common:supportedLanguagesType">
+				<inspire_common:DefaultLanguage>
+					<inspire_common:Language>fin</inspire_common:Language>
+				</inspire_common:DefaultLanguage>
+			</inspire_common:SupportedLanguages>
+			<inspire_common:ResponseLanguage>
+				<inspire_common:Language>fin</inspire_common:Language>
+			</inspire_common:ResponseLanguage>
+		</inspire_vs:ExtendedCapabilities>
+
+		<qos-wms:QualityOfServiceMetadata>
+
+			<qos:OperatingInfo>
+				<qos:OperationalStatus xlink:href="http://def.opengeospatial.org/codelist/qos/status/1.0/operationalStatus.rdf#Operational" xlink:title="Operational" />
+				<qos:ByDaysOfWeek>
+					<qos:On>Monday Tuesday Wednesday Thursday Friday</qos:On>
+					<qos:StartTime>06:00:00+03:00</qos:StartTime>
+					<qos:EndTime>17:59:59+03:00</qos:EndTime>
+				</qos:ByDaysOfWeek>
+				<qos:ByDaysOfWeek>
+					<qos:On>Saturday</qos:On>
+					<qos:StartTime>10:00:00+03:00</qos:StartTime>
+					<qos:EndTime>14:59:59+03:00</qos:EndTime>
+				</qos:ByDaysOfWeek>
+			</qos:OperatingInfo>
+
+			<qos:QualityOfServiceStatement>
+				<qos:Metric xlink:href="http://def.opengeospatial.org/codelist/qos/metrics/1.0/metrics.rdf#AvailabilityMonthly" xlink:title="Monthly service availability" />
+				<qos:MoreThanOrEqual uom="%">99.5</qos:MoreThanOrEqual>
+			</qos:QualityOfServiceStatement>
+
+			<qos:QualityOfServiceStatement>
+				<qos:Metric xlink:href="http://def.opengeospatial.org/codelist/qos/metrics/1.0/metrics.rdf#RequestCapacityPerSecond" xlink:title="Service capacity, requests per second" />
+				<qos:MoreThanOrEqual uom="s-1">54</qos:MoreThanOrEqual>
+			</qos:QualityOfServiceStatement>
+
+			<qos:RepresentativeOperation>
+				<qos-wms:GetMapOperation>
+					<ows:DCP>
+						<ows:HTTP>
+							<ows:Get></ows:Get>
+						</ows:HTTP>
+					</ows:DCP>
+					<qos-wms:RequestOption>
+						<qos:AreaConstraint srsName="EPSG:3067">
+							<qos:LowerCorner>64934.103000 6626229.791000</qos:LowerCorner>
+							<qos:UpperCorner>732333.567000 7776461.100000</qos:UpperCorner>
+						</qos:AreaConstraint>
+						<qos:RequestParameterConstraint name="LayerName">
+							<ows:AllowedValues>
+								<ows:Value>Vesienhoitoalueet</ows:Value>
+								<ows:Value>VPDPohjavesi</ows:Value>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+						<qos:RequestParameterConstraint name="CRS">
+							<ows:AllowedValues>
+								<ows:Value>EPSG:3067</ows:Value>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+						<qos:RequestParameterConstraint name="ImageWidth">
+							<ows:AllowedValues>
+								<ows:Range>
+									<ows:MaximumValue>256</ows:MaximumValue>
+								</ows:Range>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+						<qos:RequestParameterConstraint name="ImageHeight">
+							<ows:AllowedValues>
+								<ows:Range>
+									<ows:MaximumValue>256</ows:MaximumValue>
+								</ows:Range>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+						<qos:RequestParameterConstraint name="OutputFormat">
+							<ows:AllowedValues>
+								<ows:Value>image/png</ows:Value>
+								<ows:Value>image/jpeg</ows:Value>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+					</qos-wms:RequestOption>
+					<qos-wms:RequestOption>
+						<qos:AreaConstraint srsName="EPSG:4326">
+							<qos:LowerCorner>3.37087 50.7539</qos:LowerCorner>
+							<qos:UpperCorner>7.21097 53.4658</qos:UpperCorner>
+						</qos:AreaConstraint>
+						<qos:RequestParameterConstraint name="LayerName">
+							<ows:AllowedValues>
+								<ows:Value>VPDRannikkovesi</ows:Value>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+						<qos:RequestParameterConstraint name="CRS">
+							<ows:AllowedValues>
+								<ows:Value>EPSG:4326</ows:Value>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+						<qos:RequestParameterConstraint name="ImageWidth">
+							<ows:AllowedValues>
+								<ows:Range>
+									<ows:MaximumValue>150</ows:MaximumValue>
+								</ows:Range>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+						<qos:RequestParameterConstraint name="ImageHeight">
+							<ows:AllowedValues>
+								<ows:Range>
+									<ows:MaximumValue>150</ows:MaximumValue>
+								</ows:Range>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+						<qos:RequestParameterConstraint name="OutputFormat">
+							<ows:AllowedValues>
+								<ows:Value>image/tiff</ows:Value>
+							</ows:AllowedValues>
+						</qos:RequestParameterConstraint>
+					</qos-wms:RequestOption>
+				</qos-wms:GetMapOperation>
+				<qos:QualityOfServiceStatement>
+					<qos:Metric xlink:href="http://def.opengeospatial.org/codelist/qos/metrics/1.0/metrics.rdf#InitialResponsePerformance" xlink:title="Initial response performance" />
+					<qos:LessThanOrEqual uom="ms">500</qos:LessThanOrEqual>
+				</qos:QualityOfServiceStatement>
+			</qos:RepresentativeOperation>
+			
+			<qos:OperationAnomalyFeed xlink:href="myservice.ics">
+				<ows:Abstract>A iCalendar (rfc5545) feed for operation anomalies considering this service</ows:Abstract>
+				<ows:Format>text/calendar</ows:Format>
+			</qos:OperationAnomalyFeed>
+			
+
+		</qos-wms:QualityOfServiceMetadata>
+
+		<Layer>
+			<Title>Layers</Title>
+			<CRS>CRS:84</CRS>
+			<CRS>EPSG:4326</CRS>
+			<CRS>EPSG:3067</CRS>
+			<CRS>EPSG:4258</CRS>
+			<CRS>EPSG:3034</CRS>
+			<CRS>EPSG:3035</CRS>
+			<CRS>EPSG:3046</CRS>
+			<CRS>EPSG:3047</CRS>
+			<CRS>EPSG:3048</CRS>
+			<CRS>EPSG:3873</CRS>
+			<CRS>EPSG:3874</CRS>
+			<CRS>EPSG:3875</CRS>
+			<CRS>EPSG:3876</CRS>
+			<CRS>EPSG:3877</CRS>
+			<CRS>EPSG:3878</CRS>
+			<CRS>EPSG:3879</CRS>
+			<CRS>EPSG:3880</CRS>
+			<CRS>EPSG:3881</CRS>
+			<CRS>EPSG:3882</CRS>
+			<CRS>EPSG:3883</CRS>
+			<CRS>EPSG:3884</CRS>
+			<CRS>EPSG:3885</CRS>
+			<EX_GeographicBoundingBox>
+				<westBoundLongitude>15.690539</westBoundLongitude>
+				<eastBoundLongitude>33.092708</eastBoundLongitude>
+				<southBoundLatitude>59.546879</southBoundLatitude>
+				<northBoundLatitude>70.094944</northBoundLatitude>
+			</EX_GeographicBoundingBox>
+			<BoundingBox CRS="CRS:84" minx="15.690539" miny="59.546879" maxx="33.092708" maxy="70.094944"/>
+			<BoundingBox CRS="EPSG:4326" minx="59.546879" miny="15.690539" maxx="70.094944" maxy="33.092708"/>
+			<BoundingBox CRS="EPSG:3067" minx="64934.103000" miny="6626229.791000" maxx="732333.567000" maxy="7776461.100000"/>
+			<BoundingBox CRS="EPSG:4258" minx="59.546879" miny="15.690539" maxx="70.094944" maxy="33.092708"/>
+			<BoundingBox CRS="EPSG:3034" minx="3647439.340558" miny="4226977.549918" maxx="4922374.816880" maxy="5147679.679640"/>
+			<BoundingBox CRS="EPSG:3035" minx="4083997.994261" miny="4543519.977637" maxx="5355016.355092" maxy="5492670.948845"/>
+			<BoundingBox CRS="EPSG:3046" minx="6602188.365435" miny="294957.055037" maxx="7810580.185492" maxy="1068564.796113"/>
+			<BoundingBox CRS="EPSG:3047" minx="6626229.791000" miny="64934.103000" maxx="7776461.100000" maxy="732333.567000"/>
+			<BoundingBox CRS="EPSG:3048" minx="6620474.452054" miny="-271294.142742" maxx="7830632.593682" maxy="503540.360562"/>
+			<BoundingBox CRS="EPSG:3873" minx="6603628.035065" miny="19372057.545567" maxx="7830067.296237" maxy="20180308.617573"/>
+			<BoundingBox CRS="EPSG:3874" minx="6603803.646195" miny="20333446.958587" maxx="7821575.803558" maxy="21124598.831088"/>
+			<BoundingBox CRS="EPSG:3875" minx="6604830.297554" miny="21294875.005039" maxx="7813705.667759" maxy="22068792.313038"/>
+			<BoundingBox CRS="EPSG:3876" minx="6606708.159432" miny="22256350.681847" maxx="7806457.686833" maxy="23012898.230546"/>
+			<BoundingBox CRS="EPSG:3877" minx="6609437.542632" miny="23217883.005836" maxx="7799832.583604" maxy="23956925.616461"/>
+			<BoundingBox CRS="EPSG:3878" minx="6613018.897317" miny="24179481.017346" maxx="7793831.008633" maxy="24900883.382481"/>
+			<BoundingBox CRS="EPSG:3879" minx="6617452.811341" miny="25141153.783776" maxx="7788453.542883" maxy="25844780.332320"/>
+			<BoundingBox CRS="EPSG:3880" minx="6622740.008048" miny="26102910.403053" maxx="7783700.700137" maxy="26788625.174906"/>
+			<BoundingBox CRS="EPSG:3881" minx="6628881.343537" miny="27064760.007003" maxx="7779572.929172" maxy="27732426.537615"/>
+			<BoundingBox CRS="EPSG:3882" minx="6625800.119021" miny="28008483.481721" maxx="7787035.699290" maxy="28694362.936864"/>
+			<BoundingBox CRS="EPSG:3883" minx="6623567.883878" miny="28952281.321540" maxx="7795127.360555" maxy="29656253.872834"/>
+			<BoundingBox CRS="EPSG:3884" minx="6622184.279255" miny="29896162.468909" maxx="7803847.130938" maxy="30618108.295102"/>
+			<BoundingBox CRS="EPSG:3885" minx="6621649.082100" miny="30840135.996655" maxx="7813194.151419" maxy="31579935.138616"/>
+			<AuthorityURL name="Maanmittauslaitos">
+				<OnlineResource xlink:type="simple" xlink:href="http://www.maanmittauslaitos.fi"/>
+			</AuthorityURL>
+			<Layer queryable="1">
+				<Name>Vesienhoitoalueet</Name>
+				<Title>Vesienhoitoalueet</Title>
+				<Abstract>Vesienhoitoalueet</Abstract>
+				<KeywordList>
+					<Keyword vocabulary="GEMET">Aluehallinnan, rajoitusten ja sääntelyn piiriin kuuluvat alueet ja raportointiyksiköt</Keyword>
+					<Keyword>sisävedet ja meret</Keyword>
+				</KeywordList>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:3067</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3046</CRS>
+				<CRS>EPSG:3047</CRS>
+				<CRS>EPSG:3048</CRS>
+				<CRS>EPSG:3873</CRS>
+				<CRS>EPSG:3874</CRS>
+				<CRS>EPSG:3875</CRS>
+				<CRS>EPSG:3876</CRS>
+				<CRS>EPSG:3877</CRS>
+				<CRS>EPSG:3878</CRS>
+				<CRS>EPSG:3879</CRS>
+				<CRS>EPSG:3880</CRS>
+				<CRS>EPSG:3881</CRS>
+				<CRS>EPSG:3882</CRS>
+				<CRS>EPSG:3883</CRS>
+				<CRS>EPSG:3884</CRS>
+				<CRS>EPSG:3885</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>15.690876</westBoundLongitude>
+					<eastBoundLongitude>33.106930</eastBoundLongitude>
+					<southBoundLatitude>59.546893</southBoundLatitude>
+					<northBoundLatitude>70.094944</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="15.690876" miny="59.546893" maxx="33.106930" maxy="70.094944"/>
+				<BoundingBox CRS="EPSG:4326" minx="59.546893" miny="15.690876" maxx="70.094944" maxy="33.106930"/>
+				<BoundingBox CRS="EPSG:3067" minx="64947.389000" miny="6626229.790000" maxx="732879.764000" maxy="7776461.103000"/>
+				<BoundingBox CRS="EPSG:4258" minx="59.546893" miny="15.690876" maxx="70.094944" maxy="33.106930"/>
+				<BoundingBox CRS="EPSG:3034" minx="3647442.445218" miny="4226990.769592" maxx="4922493.978758" maxy="5148200.502873"/>
+				<BoundingBox CRS="EPSG:3035" minx="4084001.236790" miny="4543532.894225" maxx="5355147.544004" maxy="5493199.393970"/>
+				<BoundingBox CRS="EPSG:3046" minx="6602189.561898" miny="294970.252572" maxx="7810634.113099" maxy="1069110.540176"/>
+				<BoundingBox CRS="EPSG:3047" minx="6626229.790000" miny="64947.389000" maxx="7776461.103000" maxy="732879.764000"/>
+				<BoundingBox CRS="EPSG:3048" minx="6620425.139386" miny="-271280.846197" maxx="7830631.279886" maxy="504083.553803"/>
+				<BoundingBox CRS="EPSG:3873" minx="6603629.628695" miny="19372070.694322" maxx="7830139.255840" maxy="20180853.741359"/>
+				<BoundingBox CRS="EPSG:3874" minx="6603805.041607" miny="20333460.135895" maxx="7821638.757332" maxy="21125144.418507"/>
+				<BoundingBox CRS="EPSG:3875" minx="6604831.494496" miny="21294888.207855" maxx="7813759.616946" maxy="22069338.275486"/>
+				<BoundingBox CRS="EPSG:3876" minx="6606709.157622" miny="22256363.907118" maxx="7806502.633708" maxy="23013444.480717"/>
+				<BoundingBox CRS="EPSG:3877" minx="6609438.341751" miny="23217896.250499" maxx="7799868.531434" maxy="23957472.068218"/>
+				<BoundingBox CRS="EPSG:3878" minx="6613019.497016" miny="24179494.278323" maxx="7793857.961642" maxy="24901429.950728"/>
+				<BoundingBox CRS="EPSG:3879" minx="6617453.211235" miny="25141167.057977" maxx="7788471.506220" maxy="25845326.932867"/>
+				<BoundingBox CRS="EPSG:3880" minx="6622740.207719" miny="26102923.687372" maxx="7783709.679846" maxy="26789171.724344"/>
+				<BoundingBox CRS="EPSG:3881" minx="6628881.342537" miny="27064773.298319" maxx="7779572.932173" maxy="27732972.953181"/>
+				<BoundingBox CRS="EPSG:3882" minx="6625791.877403" miny="28008496.779980" maxx="7787035.483493" maxy="28694909.170224"/>
+				<BoundingBox CRS="EPSG:3883" minx="6623551.410903" miny="28952294.624706" maxx="7795126.925627" maxy="29656799.796168"/>
+				<BoundingBox CRS="EPSG:3884" minx="6622159.582855" miny="29896175.774919" maxx="7803846.476567" maxy="30618653.780906"/>
+				<BoundingBox CRS="EPSG:3885" minx="6621616.168874" miny="30840149.303419" maxx="7813193.277319" maxy="31580480.059655"/>
+				<Identifier authority="Maanmittauslaitos">1002019</Identifier>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/xml</Format>
+					<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/csw?request=GetRecordById&amp;service=CSW&amp;id=48570cfc-5f9d-4a82-b98b-c43fb05a054a&amp;elementSetName=full&amp;outputSchema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd" xlink:type="simple"/>
+				</MetadataURL>
+				<MetadataURL type="ISO19115:2005">
+					<Format>text/html</Format>
+					<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/metadata.show.portti?uuid=48570cfc-5f9d-4a82-b98b-c43fb05a054a" xlink:type="simple"/>
+				</MetadataURL>
+				<Style>
+					<Name>default</Name>
+					<Title>Vesienhoitoalueet</Title>
+					<LegendURL width="16" height="16">
+						<Format>image/png</Format>
+						<OnlineResource xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=Vesienhoitoalueet" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+					</LegendURL>
+				</Style>
+				<MinScaleDenominator>28348.214286</MinScaleDenominator>
+				<MaxScaleDenominator>18898809.523810</MaxScaleDenominator>
+			</Layer>
+			<Layer queryable="1">
+				<Title>Vesipuitedirektiivin mukaiset vesimuodostumat 2. suunnittelukausi</Title>
+				<Abstract>Vesipuitedirektiivin mukaiset vesimuodostumat 2. suunnittelukausi</Abstract>
+				<CRS>CRS:84</CRS>
+				<CRS>EPSG:4326</CRS>
+				<CRS>EPSG:3067</CRS>
+				<CRS>EPSG:4258</CRS>
+				<CRS>EPSG:3034</CRS>
+				<CRS>EPSG:3035</CRS>
+				<CRS>EPSG:3046</CRS>
+				<CRS>EPSG:3047</CRS>
+				<CRS>EPSG:3048</CRS>
+				<CRS>EPSG:3873</CRS>
+				<CRS>EPSG:3874</CRS>
+				<CRS>EPSG:3875</CRS>
+				<CRS>EPSG:3876</CRS>
+				<CRS>EPSG:3877</CRS>
+				<CRS>EPSG:3878</CRS>
+				<CRS>EPSG:3879</CRS>
+				<CRS>EPSG:3880</CRS>
+				<CRS>EPSG:3881</CRS>
+				<CRS>EPSG:3882</CRS>
+				<CRS>EPSG:3883</CRS>
+				<CRS>EPSG:3884</CRS>
+				<CRS>EPSG:3885</CRS>
+				<EX_GeographicBoundingBox>
+					<westBoundLongitude>15.690539</westBoundLongitude>
+					<eastBoundLongitude>33.092708</eastBoundLongitude>
+					<southBoundLatitude>59.546879</southBoundLatitude>
+					<northBoundLatitude>70.094944</northBoundLatitude>
+				</EX_GeographicBoundingBox>
+				<BoundingBox CRS="CRS:84" minx="15.690539" miny="59.546879" maxx="33.092708" maxy="70.094944"/>
+				<BoundingBox CRS="EPSG:4326" minx="59.546879" miny="15.690539" maxx="70.094944" maxy="33.092708"/>
+				<BoundingBox CRS="EPSG:3067" minx="64934.103000" miny="6626229.791000" maxx="732333.567000" maxy="7776461.100000"/>
+				<BoundingBox CRS="EPSG:4258" minx="59.546879" miny="15.690539" maxx="70.094944" maxy="33.092708"/>
+				<BoundingBox CRS="EPSG:3034" minx="3647439.340558" miny="4226977.549918" maxx="4922374.816880" maxy="5147679.679640"/>
+				<BoundingBox CRS="EPSG:3035" minx="4083997.994261" miny="4543519.977637" maxx="5355016.355092" maxy="5492670.948845"/>
+				<BoundingBox CRS="EPSG:3046" minx="6602188.365435" miny="294957.055037" maxx="7810580.185492" maxy="1068564.796113"/>
+				<BoundingBox CRS="EPSG:3047" minx="6626229.791000" miny="64934.103000" maxx="7776461.100000" maxy="732333.567000"/>
+				<BoundingBox CRS="EPSG:3048" minx="6620474.452054" miny="-271294.142742" maxx="7830632.593682" maxy="503540.360562"/>
+				<BoundingBox CRS="EPSG:3873" minx="6603628.035065" miny="19372057.545567" maxx="7830067.296237" maxy="20180308.617573"/>
+				<BoundingBox CRS="EPSG:3874" minx="6603803.646195" miny="20333446.958587" maxx="7821575.803558" maxy="21124598.831088"/>
+				<BoundingBox CRS="EPSG:3875" minx="6604830.297554" miny="21294875.005039" maxx="7813705.667759" maxy="22068792.313038"/>
+				<BoundingBox CRS="EPSG:3876" minx="6606708.159432" miny="22256350.681847" maxx="7806457.686833" maxy="23012898.230546"/>
+				<BoundingBox CRS="EPSG:3877" minx="6609437.542632" miny="23217883.005836" maxx="7799832.583604" maxy="23956925.616461"/>
+				<BoundingBox CRS="EPSG:3878" minx="6613018.897317" miny="24179481.017346" maxx="7793831.008633" maxy="24900883.382481"/>
+				<BoundingBox CRS="EPSG:3879" minx="6617452.811341" miny="25141153.783776" maxx="7788453.542883" maxy="25844780.332320"/>
+				<BoundingBox CRS="EPSG:3880" minx="6622740.008048" miny="26102910.403053" maxx="7783700.700137" maxy="26788625.174906"/>
+				<BoundingBox CRS="EPSG:3881" minx="6628881.343537" miny="27064760.007003" maxx="7779572.929172" maxy="27732426.537615"/>
+				<BoundingBox CRS="EPSG:3882" minx="6625800.119021" miny="28008483.481721" maxx="7787035.699290" maxy="28694362.936864"/>
+				<BoundingBox CRS="EPSG:3883" minx="6623567.883878" miny="28952281.321540" maxx="7795127.360555" maxy="29656253.872834"/>
+				<BoundingBox CRS="EPSG:3884" minx="6622184.279255" miny="29896162.468909" maxx="7803847.130938" maxy="30618108.295102"/>
+				<BoundingBox CRS="EPSG:3885" minx="6621649.082100" miny="30840135.996655" maxx="7813194.151419" maxy="31579935.138616"/>
+				<Layer queryable="1">
+					<Name>VPDPohjavesi</Name>
+					<Title>VPDPohjavesi</Title>
+					<Abstract>VPDPohjavesi</Abstract>
+					<KeywordList>
+						<Keyword vocabulary="GEMET">Pohjavesi</Keyword>
+					</KeywordList>
+					<CRS>CRS:84</CRS>
+					<CRS>EPSG:4326</CRS>
+					<CRS>EPSG:3067</CRS>
+					<CRS>EPSG:4258</CRS>
+					<CRS>EPSG:3034</CRS>
+					<CRS>EPSG:3035</CRS>
+					<CRS>EPSG:3046</CRS>
+					<CRS>EPSG:3047</CRS>
+					<CRS>EPSG:3048</CRS>
+					<CRS>EPSG:3873</CRS>
+					<CRS>EPSG:3874</CRS>
+					<CRS>EPSG:3875</CRS>
+					<CRS>EPSG:3876</CRS>
+					<CRS>EPSG:3877</CRS>
+					<CRS>EPSG:3878</CRS>
+					<CRS>EPSG:3879</CRS>
+					<CRS>EPSG:3880</CRS>
+					<CRS>EPSG:3881</CRS>
+					<CRS>EPSG:3882</CRS>
+					<CRS>EPSG:3883</CRS>
+					<CRS>EPSG:3884</CRS>
+					<CRS>EPSG:3885</CRS>
+					<EX_GeographicBoundingBox>
+						<westBoundLongitude>16.277377</westBoundLongitude>
+						<eastBoundLongitude>32.912395</eastBoundLongitude>
+						<southBoundLatitude>59.677689</southBoundLatitude>
+						<northBoundLatitude>70.081173</northBoundLatitude>
+					</EX_GeographicBoundingBox>
+					<BoundingBox CRS="CRS:84" minx="16.277377" miny="59.677689" maxx="32.912395" maxy="70.081173"/>
+					<BoundingBox CRS="EPSG:4326" minx="59.677689" miny="16.277377" maxx="70.081173" maxy="32.912395"/>
+					<BoundingBox CRS="EPSG:3067" minx="87754.267900" miny="6638325.288300" maxx="725560.212300" maxy="7774925.365700"/>
+					<BoundingBox CRS="EPSG:4258" minx="59.677689" miny="16.277377" maxx="70.081173" maxy="32.912395"/>
+					<BoundingBox CRS="EPSG:3034" minx="3664233.968456" miny="4250104.538924" maxx="4919342.698365" maxy="5138595.008972"/>
+					<BoundingBox CRS="EPSG:3035" minx="4101254.607713" miny="4566133.483928" maxx="5351917.492446" maxy="5483102.890995"/>
+					<BoundingBox CRS="EPSG:3046" minx="6616267.033829" miny="317777.990180" maxx="7808380.371172" maxy="1060696.432742"/>
+					<BoundingBox CRS="EPSG:3047" minx="6638325.288300" miny="87754.267900" maxx="7774925.365700" maxy="725560.212300"/>
+					<BoundingBox CRS="EPSG:3048" minx="6633126.301387" miny="-247351.976943" maxx="7826838.742391" maxy="496653.283627"/>
+					<BoundingBox CRS="EPSG:3873" minx="6618354.995686" miny="19394845.277192" maxx="7827647.749128" maxy="20172077.633034"/>
+					<BoundingBox CRS="EPSG:3874" minx="6618210.374282" miny="20356258.500750" maxx="7819265.504123" maxy="21116547.241751"/>
+					<BoundingBox CRS="EPSG:3875" minx="6618914.599669" miny="21317705.072209" maxx="7811504.973162" maxy="22060920.801062"/>
+					<BoundingBox CRS="EPSG:3876" minx="6620467.786137" miny="22279193.974754" maxx="7804366.939527" maxy="23005207.486699"/>
+					<BoundingBox CRS="EPSG:3877" minx="6622870.185317" miny="23240734.209239" maxx="7797852.111938" maxy="23949416.342721"/>
+					<BoundingBox CRS="EPSG:3878" minx="6626122.185234" miny="24202334.797818" maxx="7791961.127414" maxy="24893556.294516"/>
+					<BoundingBox CRS="EPSG:3879" minx="6630224.308835" miny="25164004.787517" maxx="7786694.553901" maxy="25837636.161840"/>
+					<BoundingBox CRS="EPSG:3880" minx="6635177.211990" miny="26125753.253727" maxx="7782052.892646" maxy="26781664.671905"/>
+					<BoundingBox CRS="EPSG:3881" minx="6640981.680972" miny="27087589.303621" maxx="7778036.580332" maxy="27725650.472489"/>
+					<BoundingBox CRS="EPSG:3882" minx="6637997.981899" miny="28031507.545869" maxx="7785123.183869" maxy="28687563.892672"/>
+					<BoundingBox CRS="EPSG:3883" minx="6635861.340625" miny="28975497.102480" maxx="7792838.487635" maxy="29649433.458154"/>
+					<BoundingBox CRS="EPSG:3884" minx="6634571.420220" miny="29919566.900962" maxx="7801181.750356" maxy="30611268.116950"/>
+					<BoundingBox CRS="EPSG:3885" minx="6634128.016720" miny="30863725.992896" maxx="7810152.155543" maxy="31573076.803054"/>
+					<Identifier authority="Maanmittauslaitos">1002003</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/csw?request=GetRecordById&amp;service=CSW&amp;id=cfc5795e-e56d-43e6-a36c-09db72c5146a&amp;elementSetName=full&amp;outputSchema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd" xlink:type="simple"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/metadata.show.portti?uuid=cfc5795e-e56d-43e6-a36c-09db72c5146a" xlink:type="simple"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>VPDPohjavesi</Title>
+						<LegendURL width="16" height="16">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=VPDPohjavesi" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+					<MinScaleDenominator>4724.702381</MinScaleDenominator>
+					<MaxScaleDenominator>18898809.523810</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>VPDRannikkovesi</Name>
+					<Title>VPDRannikkovesi</Title>
+					<Abstract>VPDRannikkovesi</Abstract>
+					<KeywordList>
+						<Keyword vocabulary="GEMET">Pintavesi</Keyword>
+					</KeywordList>
+					<CRS>CRS:84</CRS>
+					<CRS>EPSG:4326</CRS>
+					<CRS>EPSG:3067</CRS>
+					<CRS>EPSG:4258</CRS>
+					<CRS>EPSG:3034</CRS>
+					<CRS>EPSG:3035</CRS>
+					<CRS>EPSG:3046</CRS>
+					<CRS>EPSG:3047</CRS>
+					<CRS>EPSG:3048</CRS>
+					<CRS>EPSG:3873</CRS>
+					<CRS>EPSG:3874</CRS>
+					<CRS>EPSG:3875</CRS>
+					<CRS>EPSG:3876</CRS>
+					<CRS>EPSG:3877</CRS>
+					<CRS>EPSG:3878</CRS>
+					<CRS>EPSG:3879</CRS>
+					<CRS>EPSG:3880</CRS>
+					<CRS>EPSG:3881</CRS>
+					<CRS>EPSG:3882</CRS>
+					<CRS>EPSG:3883</CRS>
+					<CRS>EPSG:3884</CRS>
+					<CRS>EPSG:3885</CRS>
+					<EX_GeographicBoundingBox>
+						<westBoundLongitude>17.552636</westBoundLongitude>
+						<eastBoundLongitude>27.956177</eastBoundLongitude>
+						<southBoundLatitude>59.546879</southBoundLatitude>
+						<northBoundLatitude>65.841181</northBoundLatitude>
+					</EX_GeographicBoundingBox>
+					<BoundingBox CRS="CRS:84" minx="17.552636" miny="59.546879" maxx="27.956177" maxy="65.841181"/>
+					<BoundingBox CRS="EPSG:4326" minx="59.546879" miny="17.552636" maxx="65.841181" maxy="27.956177"/>
+					<BoundingBox CRS="EPSG:3067" minx="64934.103000" miny="6626229.791000" maxx="543671.013000" maxy="7302207.779000"/>
+					<BoundingBox CRS="EPSG:4258" minx="59.546879" miny="17.552636" maxx="65.841181" maxy="27.956177"/>
+					<BoundingBox CRS="EPSG:3034" minx="3647439.340558" miny="4349443.548100" maxx="4408786.289457" maxy="4967796.472375"/>
+					<BoundingBox CRS="EPSG:3035" minx="4083997.994261" miny="4671718.621319" maxx="4853652.969342" maxy="5309987.743991"/>
+					<BoundingBox CRS="EPSG:3046" minx="6602188.365435" miny="340830.838906" maxx="7319472.400324" maxy="880203.115509"/>
+					<BoundingBox CRS="EPSG:3047" minx="6626229.791000" miny="64934.103000" maxx="7302207.779000" maxy="543671.013000"/>
+					<BoundingBox CRS="EPSG:3048" minx="6637527.159021" miny="-271294.142742" maxx="7357021.369114" maxy="269826.706849"/>
+					<BoundingBox CRS="EPSG:3873" minx="6603628.035065" miny="19433124.777099" maxx="7333979.473363" maxy="19992206.638148"/>
+					<BoundingBox CRS="EPSG:3874" minx="6603803.646195" miny="20386934.633408" maxx="7327826.618044" maxy="20936314.260131"/>
+					<BoundingBox CRS="EPSG:3875" minx="6604830.297554" miny="21340767.145764" maxx="7322401.360868" maxy="21880355.257612"/>
+					<BoundingBox CRS="EPSG:3876" minx="6606708.159432" miny="22294631.596598" maxx="7317703.717467" maxy="22824338.414500"/>
+					<BoundingBox CRS="EPSG:3877" minx="6609437.542632" miny="23248537.293843" maxx="7313733.695581" maxy="23768272.425033"/>
+					<BoundingBox CRS="EPSG:3878" minx="6613018.897317" miny="24202493.578263" maxx="7310491.297558" maxy="24712165.906952"/>
+					<BoundingBox CRS="EPSG:3879" minx="6617452.811341" miny="25156509.830731" maxx="7307976.522468" maxy="25656027.414706"/>
+					<BoundingBox CRS="EPSG:3880" minx="6622740.008048" miny="26110595.479432" maxx="7306189.367827" maxy="26599865.452671"/>
+					<BoundingBox CRS="EPSG:3881" minx="6628881.343537" miny="27064760.007003" maxx="7305129.830932" maxy="27543688.488395"/>
+					<BoundingBox CRS="EPSG:3882" minx="6628646.136647" miny="28008483.481721" maxx="7312433.406916" maxy="28497997.620493"/>
+					<BoundingBox CRS="EPSG:3883" minx="6629258.206898" miny="28952281.321540" maxx="7320471.294107" maxy="29452307.158077"/>
+					<BoundingBox CRS="EPSG:3884" minx="6630717.652030" miny="29896162.468909" maxx="7329243.478492" maxy="30406626.355288"/>
+					<BoundingBox CRS="EPSG:3885" minx="6633024.704721" miny="30840135.996655" maxx="7338749.926694" maxy="31360964.473722"/>
+					<Identifier authority="Maanmittauslaitos">1002003</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/csw?request=GetRecordById&amp;service=CSW&amp;id=cfc5795e-e56d-43e6-a36c-09db72c5146a&amp;elementSetName=full&amp;outputSchema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd" xlink:type="simple"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/metadata.show.portti?uuid=cfc5795e-e56d-43e6-a36c-09db72c5146a" xlink:type="simple"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>VPDRannikkovesi</Title>
+						<LegendURL width="142" height="32">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=VPDRannikkovesi" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+					<MinScaleDenominator>4724.702381</MinScaleDenominator>
+					<MaxScaleDenominator>18898809.523810</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>VPDJarvi</Name>
+					<Title>VPDJarvi</Title>
+					<Abstract>VPDJarvi</Abstract>
+					<KeywordList>
+						<Keyword vocabulary="GEMET">Pintavesi</Keyword>
+					</KeywordList>
+					<CRS>CRS:84</CRS>
+					<CRS>EPSG:4326</CRS>
+					<CRS>EPSG:3067</CRS>
+					<CRS>EPSG:4258</CRS>
+					<CRS>EPSG:3034</CRS>
+					<CRS>EPSG:3035</CRS>
+					<CRS>EPSG:3046</CRS>
+					<CRS>EPSG:3047</CRS>
+					<CRS>EPSG:3048</CRS>
+					<CRS>EPSG:3873</CRS>
+					<CRS>EPSG:3874</CRS>
+					<CRS>EPSG:3875</CRS>
+					<CRS>EPSG:3876</CRS>
+					<CRS>EPSG:3877</CRS>
+					<CRS>EPSG:3878</CRS>
+					<CRS>EPSG:3879</CRS>
+					<CRS>EPSG:3880</CRS>
+					<CRS>EPSG:3881</CRS>
+					<CRS>EPSG:3882</CRS>
+					<CRS>EPSG:3883</CRS>
+					<CRS>EPSG:3884</CRS>
+					<CRS>EPSG:3885</CRS>
+					<EX_GeographicBoundingBox>
+						<westBoundLongitude>16.379497</westBoundLongitude>
+						<eastBoundLongitude>33.075545</eastBoundLongitude>
+						<southBoundLatitude>59.724317</southBoundLatitude>
+						<northBoundLatitude>70.035834</northBoundLatitude>
+					</EX_GeographicBoundingBox>
+					<BoundingBox CRS="CRS:84" minx="16.379497" miny="59.724317" maxx="33.075545" maxy="70.035834"/>
+					<BoundingBox CRS="EPSG:4326" minx="59.724317" miny="16.379497" maxx="70.035834" maxy="33.075545"/>
+					<BoundingBox CRS="EPSG:3067" minx="90877.344000" miny="6643214.752000" maxx="732333.567000" maxy="7769869.214000"/>
+					<BoundingBox CRS="EPSG:4258" minx="59.724317" miny="16.379497" maxx="70.035834" maxy="33.075545"/>
+					<BoundingBox CRS="EPSG:3034" minx="3669599.280286" miny="4254557.360835" maxx="4915712.147557" maxy="5143995.459524"/>
+					<BoundingBox CRS="EPSG:3035" minx="4106741.514380" miny="4570561.567428" maxx="5348701.336334" maxy="5488437.422334"/>
+					<BoundingBox CRS="EPSG:3046" minx="6621408.626732" miny="321376.968445" maxx="7804007.755079" maxy="1067018.407673"/>
+					<BoundingBox CRS="EPSG:3047" minx="6643214.752000" miny="90877.344000" maxx="7769869.214000" maxy="732333.567000"/>
+					<BoundingBox CRS="EPSG:3048" minx="6637380.940276" miny="-243779.792479" maxx="7821483.378943" maxy="502893.033666"/>
+					<BoundingBox CRS="EPSG:3873" minx="6623576.334310" miny="19398597.327110" maxx="7823511.325620" maxy="20178241.874972"/>
+					<BoundingBox CRS="EPSG:3874" minx="6623393.257900" miny="20359935.181891" maxx="7815009.491277" maxy="21122792.252228"/>
+					<BoundingBox CRS="EPSG:3875" minx="6624058.250032" miny="21321305.490642" maxx="7807130.607322" maxy="22067245.305795"/>
+					<BoundingBox CRS="EPSG:3876" minx="6625571.417769" miny="22282717.241380" maxx="7799875.463238" maxy="23011610.237149"/>
+					<BoundingBox CRS="EPSG:3877" minx="6627933.004314" miny="23244179.439557" maxx="7793244.773876" maxy="23955896.114891"/>
+					<BoundingBox CRS="EPSG:3878" minx="6631143.388089" miny="24205701.111726" maxx="7787239.182375" maxy="24900111.887702"/>
+					<BoundingBox CRS="EPSG:3879" minx="6635203.081288" miny="25167291.309147" maxx="7781859.262847" maxy="25844266.397330"/>
+					<BoundingBox CRS="EPSG:3880" minx="6640112.727906" miny="26128959.111323" maxx="7777105.522807" maxy="26788368.391627"/>
+					<BoundingBox CRS="EPSG:3881" minx="6645873.101240" miny="27090713.629452" maxx="7772978.405362" maxy="27732426.537615"/>
+					<BoundingBox CRS="EPSG:3882" minx="6642785.169584" miny="28034707.495420" maxx="7780012.264569" maxy="28694254.713877"/>
+					<BoundingBox CRS="EPSG:3883" minx="6640543.669838" miny="28978772.372605" maxx="7787675.949115" maxy="29656037.530645"/>
+					<BoundingBox CRS="EPSG:3884" minx="6639148.251191" miny="29922917.193972" maxx="7795968.730117" maxy="30617783.947332"/>
+					<BoundingBox CRS="EPSG:3885" minx="6638598.694612" miny="30867151.015499" maxx="7804889.804144" maxy="31579502.908605"/>
+					<Identifier authority="Maanmittauslaitos">1002003</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/csw?request=GetRecordById&amp;service=CSW&amp;id=cfc5795e-e56d-43e6-a36c-09db72c5146a&amp;elementSetName=full&amp;outputSchema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd" xlink:type="simple"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/metadata.show.portti?uuid=cfc5795e-e56d-43e6-a36c-09db72c5146a" xlink:type="simple"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>VPDJarvi</Title>
+						<LegendURL width="142" height="48">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=VPDJarvi" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+					<MinScaleDenominator>4724.702381</MinScaleDenominator>
+					<MaxScaleDenominator>18898809.523810</MaxScaleDenominator>
+				</Layer>
+				<Layer queryable="1">
+					<Name>VPDJoki</Name>
+					<Title>VPDJoki</Title>
+					<Abstract>VPDJoki</Abstract>
+					<KeywordList>
+						<Keyword vocabulary="GEMET">Pintavesi</Keyword>
+					</KeywordList>
+					<CRS>CRS:84</CRS>
+					<CRS>EPSG:4326</CRS>
+					<CRS>EPSG:3067</CRS>
+					<CRS>EPSG:4258</CRS>
+					<CRS>EPSG:3034</CRS>
+					<CRS>EPSG:3035</CRS>
+					<CRS>EPSG:3046</CRS>
+					<CRS>EPSG:3047</CRS>
+					<CRS>EPSG:3048</CRS>
+					<CRS>EPSG:3873</CRS>
+					<CRS>EPSG:3874</CRS>
+					<CRS>EPSG:3875</CRS>
+					<CRS>EPSG:3876</CRS>
+					<CRS>EPSG:3877</CRS>
+					<CRS>EPSG:3878</CRS>
+					<CRS>EPSG:3879</CRS>
+					<CRS>EPSG:3880</CRS>
+					<CRS>EPSG:3881</CRS>
+					<CRS>EPSG:3882</CRS>
+					<CRS>EPSG:3883</CRS>
+					<CRS>EPSG:3884</CRS>
+					<CRS>EPSG:3885</CRS>
+					<EX_GeographicBoundingBox>
+						<westBoundLongitude>19.105024</westBoundLongitude>
+						<eastBoundLongitude>33.055868</eastBoundLongitude>
+						<southBoundLatitude>59.906709</southBoundLatitude>
+						<northBoundLatitude>70.094944</northBoundLatitude>
+					</EX_GeographicBoundingBox>
+					<BoundingBox CRS="CRS:84" minx="19.105024" miny="59.906709" maxx="33.055868" maxy="70.094944"/>
+					<BoundingBox CRS="EPSG:4326" minx="59.906709" miny="19.105024" maxx="70.094944" maxy="33.055868"/>
+					<BoundingBox CRS="EPSG:3067" minx="198208.934000" miny="6653338.618000" maxx="730918.812000" maxy="7776461.100000"/>
+					<BoundingBox CRS="EPSG:4258" minx="59.906709" miny="19.105024" maxx="70.094944" maxy="33.055868"/>
+					<BoundingBox CRS="EPSG:3034" minx="3704147.176227" miny="4359958.700927" maxx="4922066.063946" maxy="5140449.524604"/>
+					<BoundingBox CRS="EPSG:3035" minx="4142664.641961" miny="4673221.892117" maxx="5354676.506219" maxy="5484542.576517"/>
+					<BoundingBox CRS="EPSG:3046" minx="6641173.954555" miny="427397.502414" maxx="7810440.512679" maxy="1064682.087947"/>
+					<BoundingBox CRS="EPSG:3047" minx="6653338.618000" miny="198208.934000" maxx="7776461.100000" maxy="730918.812000"/>
+					<BoundingBox CRS="EPSG:3048" minx="6647585.940744" miny="-135510.843673" maxx="7817441.627841" maxy="502133.378914"/>
+					<BoundingBox CRS="EPSG:3873" minx="6646536.729395" miny="19504025.968812" maxx="7829880.918493" maxy="20175596.713902"/>
+					<BoundingBox CRS="EPSG:3874" minx="6644761.521431" miny="20465693.216016" maxx="7821412.751906" maxy="21120301.102580"/>
+					<BoundingBox CRS="EPSG:3875" minx="6643831.487150" miny="21427368.449794" maxx="7813565.939055" maxy="22064908.051167"/>
+					<BoundingBox CRS="EPSG:3876" minx="6643746.481606" miny="22389060.597150" maxx="7806341.275264" maxy="23009426.777777"/>
+					<BoundingBox CRS="EPSG:3877" minx="6644506.491540" miny="23350778.592011" maxx="7799739.480788" maxy="23953866.368820"/>
+					<BoundingBox CRS="EPSG:3878" minx="6646111.635432" miny="24312531.378847" maxx="7793761.203711" maxy="24898235.791845"/>
+					<BoundingBox CRS="EPSG:3879" minx="6648562.163040" miny="25274327.916267" maxx="7788407.022599" maxy="25842543.908439"/>
+					<BoundingBox CRS="EPSG:3880" minx="6651858.454417" miny="26236177.180575" maxx="7783677.448913" maxy="26786799.487156"/>
+					<BoundingBox CRS="EPSG:3881" minx="6656001.018407" miny="27198088.169268" maxx="7779572.929172" maxy="27731011.216487"/>
+					<BoundingBox CRS="EPSG:3882" minx="6652930.492585" miny="28142279.509519" maxx="7784842.549057" maxy="28692948.086516"/>
+					<BoundingBox CRS="EPSG:3883" minx="6650704.839013" miny="29086525.615780" maxx="7790738.266589" maxy="29654839.824344"/>
+					<BoundingBox CRS="EPSG:3884" minx="6649323.715004" miny="30030835.269028" maxx="7797259.521045" maxy="30616695.378730"/>
+					<BoundingBox CRS="EPSG:3885" minx="6648786.907278" miny="30975217.347041" maxx="7804405.683246" maxy="31578523.683933"/>
+					<Identifier authority="Maanmittauslaitos">1002003</Identifier>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/xml</Format>
+						<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/csw?request=GetRecordById&amp;service=CSW&amp;id=cfc5795e-e56d-43e6-a36c-09db72c5146a&amp;elementSetName=full&amp;outputSchema=http%3A%2F%2Fwww.isotc211.org%2F2005%2Fgmd" xlink:type="simple"/>
+					</MetadataURL>
+					<MetadataURL type="ISO19115:2005">
+						<Format>text/html</Format>
+						<OnlineResource xlink:href="http://www.paikkatietohakemisto.fi/geonetwork/srv/fi/metadata.show.portti?uuid=cfc5795e-e56d-43e6-a36c-09db72c5146a" xlink:type="simple"/>
+					</MetadataURL>
+					<Style>
+						<Name>default</Name>
+						<Title>VPDJoki</Title>
+						<LegendURL width="142" height="48">
+							<Format>image/png</Format>
+							<OnlineResource xlink:href="http://testbed2.ymparisto.fi/arcgis/services/VPD/SYKE_AlueidenHallintaJaRajoitukset1/MapServer/WmsServer?request=GetLegendGraphic%26version=1.3.0%26format=image/png%26layer=VPDJoki" xlink:type="simple" xmlns:xlink="http://www.w3.org/1999/xlink"/>
+						</LegendURL>
+					</Style>
+					<MinScaleDenominator>4724.702381</MinScaleDenominator>
+					<MaxScaleDenominator>18898809.523810</MaxScaleDenominator>
+				</Layer>
+			</Layer>
+		</Layer>
+	</Capability>
+</WMS_Capabilities>

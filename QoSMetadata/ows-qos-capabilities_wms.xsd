@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.opengis.net/qos/wms/1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:qos="http://www.opengis.net/qos/1.0"
+    xmlns:qos-wms="http://www.opengis.net/qos/wms/1.0"
+    xmlns:wms="http://www.opengis.net/wms"
+    xmlns:ows="http://www.opengis.net/ows/2.0"
+    elementFormDefault="qualified">
+    
+    <import namespace="http://www.opengis.net/qos/1.0" schemaLocation="./ows-qos-common.xsd"/>
+    <import namespace="http://www.opengis.net/wms" schemaLocation="http://schemas.opengis.net/wms/1.3.0/capabilities_1_3_0.xsd"/>
+    <import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
+    
+    <element name="QualityOfServiceMetadata" type="qos:QualityOfServiceMetadataType" substitutionGroup="wms:_ExtendedCapabilities"></element>
+    
+    <element name="GetMapOperation" type="qos-wms:GetMapOperationType" substitutionGroup="qos:_Operation"/>
+    <complexType name="GetMapOperationType">
+        <complexContent>
+            <extension base="qos:AbstractOperationType">
+                <sequence>
+                    <element name="RequestOption" type="qos:LimitedAreaRequestConstraintsType" maxOccurs="unbounded" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <element name="GetFeatureInfoOperation" type="qos-wms:GetFeatureInfoOperationType" substitutionGroup="qos:_Operation"/>
+    <complexType name="GetFeatureInfoOperationType">
+        <complexContent>
+            <extension base="qos:AbstractOperationType">
+                <sequence>
+                    <element name="RequestOption" type="qos:LimitedAreaRequestConstraintsType" maxOccurs="unbounded" />
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+</schema>

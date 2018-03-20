@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    
+    <skos:Concept rdf:about="#Operational">
+        <skos:prefLabel>operational</skos:prefLabel>
+        <skos:definition>
+           The service or endpoint can be expected to function reliably and return
+           correct and up-to-date information according to it's service and dataset descriptions.
+           Any functinal changes in an operational service are properly documented and communicated 
+           to the users, in advance if possible.
+           An operational service is being monitored for malfunctions or other functional problems,
+           and any noticed problems are reacted upon in a timely fashion.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#PreOrerational">
+        <skos:prefLabel>pre-operational</skos:prefLabel>
+        <skos:definition>
+            The users of a pre-operational service or endpoint may experience occational 
+            functional problems or downtime, and the functionality may occationally change without
+            advance notification. There is an implicit intention to evolve a 
+            pre-operational service into an operational service in time.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#NonOperational">
+        <skos:prefLabel>non-operational</skos:prefLabel>
+        <skos:definition>
+           Users of a non-operational service or endpoint should not expect that the describe 
+           service is stabile or reliable. The functionality may change at the any time, and the 
+           entire service may be unavailable or disappear completely at any time.
+        </skos:definition>
+    </skos:Concept>
+    
+</rdf:RDF>

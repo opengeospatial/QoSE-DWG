@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.opengis.net/qos/1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:qos="http://www.opengis.net/qos/1.0"
+    xmlns:ows="http://www.opengis.net/ows/2.0"
+    elementFormDefault="qualified">
+    
+    <import namespace="http://www.w3.org/1999/xlink" schemaLocation="http://www.w3.org/1999/xlink.xsd"/>
+    <import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
+    
+    <complexType name="QualityOfServiceMetadataType">
+        <sequence>
+            <element name="OperatingInfo" type="qos:OperatingInfoType" minOccurs="0" maxOccurs="unbounded" />
+            <element ref="qos:QualityOfServiceStatement" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="RepresentativeOperation" type="qos:AssessedOperationType" minOccurs="0" maxOccurs="unbounded" />
+            <element name="OperationAnomalyFeed" type="ows:ReferenceType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="OperatingInfoType">
+        <sequence>
+            <element name="OperationalStatus" type="ows:ReferenceType" minOccurs="0"/>
+            <element name="Description" type="string" minOccurs="0"/>
+            <choice>
+                <element name="ByDaysOfWeek" minOccurs="0" maxOccurs="unbounded">
+                    <complexType>
+                        <sequence>
+                            <element name="On" type="qos:dayOfWeekListType"/>
+                            <element name="StartTime" type="time" minOccurs="0" />
+                            <element name="EndTime" type="time" minOccurs="0" />
+                        </sequence>
+                    </complexType>
+                </element>
+                <sequence>
+                    <element name="StartTime" type="time" minOccurs="0"/>
+                    <element name="EndTime" type="time" minOccurs="0"/>
+                </sequence>
+            </choice>
+        </sequence>
+    </complexType>
+    
+    <complexType name="AssessedOperationType">
+        <sequence>
+            <element ref="qos:_Operation" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="qos:QualityOfServiceStatement" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <element name="_Operation" type="qos:AbstractOperationType" abstract="true"/>
+    <complexType name="AbstractOperationType" abstract="true">
+        <sequence>
+            <element ref="ows:DCP" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="Constraint" type="ows:DomainType" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <element name="GetCapabilitiesOperation" type="qos:GetCapabilitiesOperationType" substitutionGroup="qos:_Operation" />
+    <complexType name="GetCapabilitiesOperationType">
+        <complexContent>
+            <extension base="qos:AbstractOperationType" />
+        </complexContent>
+    </complexType>
+    
+    <element name="QualityOfServiceStatement" type="qos:QualityOfServiceStatementType" />
+    <complexType name="QualityOfServiceStatementType">
+        <sequence>
+            <element name="Metric" type="ows:ReferenceType" maxOccurs="unbounded"/>
+            <choice>
+                <element name="Value" type="string" />
+                <element name="LessThanOrEqual" type="qos:numberWithUnitType" />
+                <element name="MoreThanOrEqual" type="qos:numberWithUnitType" />
+            </choice>
+        </sequence> 
+    </complexType>
+    
+    <complexType name="LimitedAreaRequestConstraintsType">
+        <sequence>
+            <element ref="qos:AreaConstraint" minOccurs="0" maxOccurs="unbounded"/>
+            <element ref="qos:RequestParameterConstraint" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <element name="RequestParameterConstraint" type="ows:DomainType"/>
+    
+    <element name="AreaConstraint" type="qos:AreaConstraintType"/>
+    <complexType name="AreaConstraintType">
+        <choice>
+            <sequence>
+                <element name="LowerCorner" type="qos:doubleList"/>
+                <element name="UpperCorner" type="qos:doubleList"/>
+            </sequence>
+        </choice>
+        <attribute name="srsName" type="anyURI" use="required"/>
+    </complexType>
+
+    <simpleType name="dayOfWeekListType">
+        <annotation>
+            <documentation>
+                A type for a list of week days.
+            </documentation>
+        </annotation>
+        <list>
+            <simpleType>
+                <restriction base="string">
+                    <enumeration value="Monday" />
+                    <enumeration value="Tuesday"/>
+                    <enumeration value="Wednesday"/>
+                    <enumeration value="Thursday"/>
+                    <enumeration value="Friday"/>
+                    <enumeration value="Saturday"/>
+                    <enumeration value="Sunday"/>
+                    <enumeration value="EveryDay"/>
+                </restriction>
+            </simpleType>  
+        </list>
+    </simpleType>
+    
+    <complexType name="numberWithUnitType">
+        <simpleContent>
+            <extension base="double">
+                <attribute name="uom"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    
+   
+    
+    <simpleType name="doubleList">
+        <annotation>
+            <documentation>
+                A type for a list of values of the respective simple type.
+            </documentation>
+        </annotation>
+        <list itemType="double"/>
+    </simpleType>
+    
+   
+</schema>

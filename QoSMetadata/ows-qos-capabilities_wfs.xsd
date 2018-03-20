@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://www.opengis.net/qos/wfs/1.0"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:qos="http://www.opengis.net/qos/1.0"
+    xmlns:qos-wfs="http://www.opengis.net/qos/wfs/1.0"
+    xmlns:fes="http://www.opengis.net/fes/2.0"
+    xmlns:wfs="http://www.opengis.net/wfs/2.0"
+    xmlns:ows="http://www.opengis.net/ows/2.0" 
+    elementFormDefault="qualified">
+    
+    <import namespace="http://www.opengis.net/qos/1.0" schemaLocation="./ows-qos-common.xsd"/>
+    <import namespace="http://www.opengis.net/fes/2.0" schemaLocation="http://schemas.opengis.net/filter/2.0/filterAll.xsd"/>
+    <import namespace="http://www.opengis.net/wfs/2.0" schemaLocation="http://schemas.opengis.net/wfs/2.0/wfs.xsd"/>
+    <import namespace="http://www.opengis.net/ows/2.0" schemaLocation="http://schemas.opengis.net/ows/2.0/owsAll.xsd"/>
+    
+    <element name="GetFeatureOperation" type="qos-wfs:GetFeatureOperationType" substitutionGroup="qos:_Operation"/>
+    
+    <complexType name="GetFeatureOperationType">
+        <complexContent>
+            <extension base="qos:AbstractOperationType">
+                <sequence>
+                    <choice>
+                        <element name="AdHocQueryConstraints" type="qos-wfs:AdHocQueryConstraintsType" maxOccurs="unbounded" minOccurs="0" />
+                        <element name="StoredQueryConstraints" type="qos-wfs:StoredQueryConstraintsType" maxOccurs="unbounded" minOccurs="0" />
+                    </choice>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="AdHocQueryConstraintsType">
+        <complexContent>
+            <extension base="qos:LimitedAreaRequestConstraintsType">
+                <sequence>
+                    <element name="TypeNames" type="fes:TypeNamesListType" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    <complexType name="StoredQueryConstraintsType">
+        <complexContent>
+            <extension base="qos:LimitedAreaRequestConstraintsType">
+                <sequence>
+                    <element name="StoredQueryId" type="anyURI" minOccurs="0"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    
+    
+    <element name="QualityOfServiceMetadata" type="qos:QualityOfServiceMetadataType" />
+</schema>
+

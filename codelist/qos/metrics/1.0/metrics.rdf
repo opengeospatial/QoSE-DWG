@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    
+    <skos:Concept rdf:about="#ResponseTime">
+        <skos:prefLabel>response time</skos:prefLabel>
+        <skos:definition>
+            The time between sending a valid service request and receiving a response for that request from the service.
+            Note that this term does not state if or how the effect caused by the network latency or transfer speed 
+            between the request sender and the server should be calculated. For accurate measurements the effects caused
+            by network access should be minimized by measuring at a network location connected to the service with
+            minimal latency and high transfer speed. If this is not possible, the typical network delay and latency
+            experienced at the measurement location should be estimated and extracted from the measured service 
+            request times.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#ServicePerformance">
+        <skos:prefLabel>service performance</skos:prefLabel>
+        <skos:definition>
+            A measure of a service working as expected and in a timely fashion. Performance should be measured 
+            ia a way that makes comparison possible between services providing the same functionality 
+            and information content.
+        </skos:definition>
+    </skos:Concept>
+    
+    
+    <skos:Concept rdf:about="#RequestResponsePerformance">
+        <skos:prefLabel>request response performance</skos:prefLabel>
+        <skos:broader rdf:resource="#ServicePerformance" />
+        <skos:related rdf:resource="#ResponseTime" />
+        <skos:definition>
+            Method of evaluting the performance of the service by measuring it's response time for 
+            particular requests. The lower the response time for a particular operation, 
+            the more performant the service is seen. The assumption here is that repeated tests do not
+            affect the response time considerably, and that the service or the network connection
+            between the tester and the service has no other use at the time of measurement
+            that would considerably influence the response time.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#InitialResponsePerformance">
+        <skos:prefLabel>initial response performance</skos:prefLabel>
+        <skos:broader rdf:resource="#RequestResponsePerformance" />
+        <skos:definition>
+           Request response performance measuring the time between sending the request
+           and receiving the first byte(s) of the response back. Different from
+           #RequestResponsePerformance only in cases where there is a measurable difference
+           in receiving the first byte(s) and the whole response.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#MinimumRequestResponsePerformance">
+        <skos:prefLabel>minimum request performance</skos:prefLabel>
+        <skos:broader rdf:resource="#RequestResponsePerformance" />
+        <skos:definition>
+            The the upper limit for the request performance measured in milliseconds.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#ContinuousAvailability">
+        <skos:prefLabel>service availability</skos:prefLabel>
+        <skos:related rdf:resource="#MinimumRequestResponsePerformance" />
+        <skos:definition>
+            The percentage of time within a period a month an online service has been generally accessible
+            and operating above its minimum request performance for its intended users using its intended 
+            network access methods. A measured metric value shall be calculated by measuring the service 
+            access continously at least 10 times an hour.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#AvailabilityMonthly">
+        <skos:prefLabel>monthly service availability</skos:prefLabel>
+        <skos:broader rdf:resource="#ContinuousAvailability" />
+        <skos:definition>
+            Service availability measured or estimated over a period of one month. Unless a specific month is referred to,
+            this shall be interpreted as any given 30-day period of time.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#AvailabilityDaily">
+        <skos:prefLabel>daily service availability</skos:prefLabel>
+        <skos:broader rdf:resource="#ContinuousAvailability" />
+        <skos:definition>
+            Service availability measured or estimated over a period of one day (24 hours). Unless a specific day is referred to,
+            this shall be interpreted as any given 24-hour period of time.
+        </skos:definition>
+    </skos:Concept>
+    
+    <skos:Concept rdf:about="#RequestCapacity">
+        <skos:prefLabel>request capacity</skos:prefLabel>
+        <skos:related rdf:resource="#MinimumRequestResponsePerformance" />
+        <skos:definition>
+            The number of new valid requests that can be successfully executed by a service within a given period of time 
+            while staying above the minimum request performance.
+        </skos:definition>
+    </skos:Concept>
+ 
+    <skos:Concept rdf:about="#RequestCapacityPerSecond">
+        <skos:prefLabel>request capacity in second</skos:prefLabel>
+        <skos:broader rdf:resource="#RequestCapacity" />
+        <skos:definition>
+            The number of new valid requests that can be successfully executed within one second 
+            while staying above the minimum request performance.
+        </skos:definition>
+    </skos:Concept>
+    
+</rdf:RDF>
